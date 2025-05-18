@@ -49,6 +49,7 @@ class _HomescreenState extends State<Homescreen> {
   void feachProfuct()async{
     feachData = await apiService.getAllProducts()??[];
     setState(() {
+      print('data get $feachData');
       fillterList = feachData;
     });
 
@@ -113,11 +114,10 @@ class _HomescreenState extends State<Homescreen> {
           ),
           Expanded(
             child: GridView.builder(
-              physics: BouncingScrollPhysics(),
               itemCount:fillterList.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 0.6,
+                childAspectRatio: 0.6
               ),
               itemBuilder:
                   (context, index) => ProductItemView(product: fillterList[index]),

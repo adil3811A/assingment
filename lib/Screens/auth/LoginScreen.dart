@@ -40,6 +40,7 @@ class _LoginscreenState extends State<Loginscreen> {
               decoration: InputDecoration(
                   label: Text('Enter Email')
               ),
+              keyboardType: TextInputType.emailAddress,
             ),
             TextField(
               controller: passwordTextEdtitingController,

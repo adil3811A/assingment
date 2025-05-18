@@ -46,6 +46,7 @@ class _RegisterscreenState extends State<Registerscreen> {
               decoration: InputDecoration(
                 label: Text('Enter Email')
               ),
+              keyboardType: TextInputType.emailAddress,
             ),
             TextField(
               controller: passwordTextEditingController,
@@ -69,6 +70,20 @@ class _RegisterscreenState extends State<Registerscreen> {
               keyboardType: TextInputType.number,
             ),
             ElevatedButton(onPressed:() async {
+              if(passwordTextEditingController.text.isEmpty || phoneNumberTextEditingContoller.text.isEmpty || nameTextEditingContoller.text.isEmpty || emailTextEditingController.text.isEmpty){
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(
+                  SnackBar(content: Text('Please fill all detail'))
+                );
+                return;
+              }
+              if(passwordTextEditingController.text.length<4){
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(
+                    SnackBar(content: Text('Password is too short'))
+                );
+                return;
+              }
               final user = await authFireabseService.createUser(
                 UserModule(
                     name: nameTextEditingContoller.text.toString(),

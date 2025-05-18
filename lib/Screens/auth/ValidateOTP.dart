@@ -47,13 +47,15 @@ class _ValidateotpState extends State<Validateotp> {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text('OTP is too short'), duration: Duration(seconds: 3),)
                 );
-                if(textEditingController.text!='1234'){
-                  ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('OTP is not valid'), duration: Duration(seconds: 3),)
-                  );
-                }
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Mainapp(),));
+                return;
               }
+              if(textEditingController.text!='1234'){
+                ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('OTP is not valid'), duration: Duration(seconds: 3),)
+                );
+                return;
+              }
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Mainapp(),));
             }, child: Text('Submit OTP')),
             Text('Note You can enter dummy OTP "1234"')
           ],

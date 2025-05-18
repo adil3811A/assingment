@@ -1,6 +1,7 @@
 import 'package:assingment/Screens/HomeScreen.dart';
 import 'package:assingment/Services/ApiService.dart';
 import 'package:assingment/model/ProductModel.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:flutter/material.dart';
 
 class Detailscreen extends StatelessWidget {
@@ -14,7 +15,14 @@ class Detailscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(product.title)),
+      appBar: AppBar(
+          title: Text(product.title),
+        actions: [
+          IconButton(onPressed: ()  {
+            SharePlus.instance.share(ShareParams(text: 'https://dummyjson.com/products/${product.id}'));
+          }, icon: Icon(Icons.share))
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,9 +30,9 @@ class Detailscreen extends StatelessWidget {
             // CarouselView with constrained height
             ConstrainedBox(
               constraints: BoxConstraints(maxHeight: 300),
-              child: CarouselView(
+              child: CarouselView.weighted(
                 controller: controller,
-                itemExtent: MediaQuery.of(context).size.width,
+                flexWeights: [1,7,1],
                 padding: const EdgeInsets.all(8),
                 children:
                     product.images.map((url) {

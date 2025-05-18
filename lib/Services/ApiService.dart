@@ -60,7 +60,6 @@ class ApiService{
         return listOfProdutct;
       }
     }catch(e){
-      print(e);
       return listOfProdutct;
     }
   }

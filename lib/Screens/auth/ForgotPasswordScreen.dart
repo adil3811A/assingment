@@ -41,6 +41,7 @@ class _ForgotpasswordscreenState extends State<Forgotpasswordscreen> {
                 decoration: InputDecoration(
                   label: Text('Enter your email')
                 ),
+                keyboardType: TextInputType.emailAddress,
               ),
               ElevatedButton(onPressed: () {
                 if(emailTextEditingController.text.isEmpty){

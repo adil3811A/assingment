@@ -1,5 +1,5 @@
 class ProductModel{
-  final double id;
+  final int id;
   final String title;
   final String discription;
   final String category;
