@@ -1,16 +1,24 @@
 # assingment
 
-A new Flutter project.
+## Feature copleted
+1. Authentication Module
+2. Product Listing Page
+3. Profile Page (CRUD Operations)
+4. Product Description Page
+5. Product Share Functionality
 
-## Getting Started
+## setup installation
+> Set up is easy just clone the repository or donload as .zip and open in Android Studion and run wihch divice you want.
 
-This project is a starting point for a Flutter application.
+## APi end point
+`https://dummyjson.com/products`
 
-A few resources to get you started if this is your first Flutter project:
+`https://dummyjson.com/products/category`
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screeenshots
+![Detail Screen](./images/DetailScereen.jpg)
+
+![profile Screen](./images/profileScreen.jpg)
+
+![Home Sceeen](./images/profileScreen.jpg)

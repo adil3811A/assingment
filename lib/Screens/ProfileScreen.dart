@@ -102,7 +102,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         flex: 1,
                         child: ElevatedButton(
                           onPressed: () {
-                            // Cancel action
+                            Navigator.pop(context);
                           },
                           child: Text('Cancel'),
                         ),
@@ -119,7 +119,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 password: user.password,
                                 name: nameTextEditingController.text.toString()
                             );
-                            print('Profile update');
+                            Navigator.pop(context);
                           },
                           child: Text('Update Profile'),
                         ),
