@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "738832619878",
+    "firebase_url": "https://video-calling-app-dbc82-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "video-calling-app-dbc82",
+    "storage_bucket": "video-calling-app-dbc82.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738832619878:android:3b1df8a07316c7f47890a7",
+        "android_client_info": {
+          "package_name": "com.example.assingment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnj0JvIlfpEwAJXyouJme9BKi_hSct2bI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738832619878:android:dde80cab008344d27890a7",
+        "android_client_info": {
+          "package_name": "com.example.videocallingapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnj0JvIlfpEwAJXyouJme9BKi_hSct2bI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
