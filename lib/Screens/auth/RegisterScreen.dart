@@ -1,6 +1,7 @@
 import 'package:assingment/Screens/MainApp.dart';
 import 'package:assingment/Screens/auth/LoginScreen.dart';
 import 'package:assingment/Services/FirebaseService.dart';
+import 'package:assingment/Services/LocalService.dart';
 import 'package:assingment/model/UserModule.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class Registerscreen extends StatefulWidget {
 }
 
 class _RegisterscreenState extends State<Registerscreen> {
-
+  final localService = LocalService();
   final authFireabseService = FirebaseService.FirebaseServiceControctor();
   late TextEditingController emailTextEditingController;
   late TextEditingController passwordTextEditingController;
@@ -94,6 +95,7 @@ class _RegisterscreenState extends State<Registerscreen> {
                 )
               );
               if(user!=null){
+                 localService.storeAccessToken('this is access token');
                 Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Mainapp(),), (route) => false,);
               }else{
                 ScaffoldMessenger.of(context).showSnackBar(

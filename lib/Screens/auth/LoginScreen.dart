@@ -1,5 +1,6 @@
 import 'package:assingment/Screens/MainApp.dart';
 import 'package:assingment/Services/FirebaseService.dart';
+import 'package:assingment/Services/LocalService.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'ForgotPasswordScreen.dart';
@@ -12,6 +13,7 @@ class Loginscreen extends StatefulWidget {
 }
 
 class _LoginscreenState extends State<Loginscreen> {
+  final localServicce= LocalService();
   final authfirebaseService = FirebaseService.FirebaseServiceControctor();
   late TextEditingController emailTextEdtitingController;
   late TextEditingController passwordTextEdtitingController;
@@ -56,6 +58,7 @@ class _LoginscreenState extends State<Loginscreen> {
                     passwordTextEdtitingController.text.toString()
                 );
                 if(user!=null){
+                  await localServicce.storeAccessToken('this is access token');
                   Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Mainapp()),(route) => false,);
                 }
               }on FirebaseAuthException catch(e){

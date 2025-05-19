@@ -30,7 +30,6 @@ class ApiService{
         return null;
       }
     }catch(e){
-      print(e);
       return null;
     }
 
